@@ -7,10 +7,32 @@
     <groupId>ru.eskendarov.room</groupId>
     <artifactId>room</artifactId>
     <version>1.0</version>
+    <packaging>pom</packaging>
+    <name>RoomParent</name>
+    <url>https://eskendarov.ru/projects/room</url>
+    <developers>
+        <developer>
+            <name>Enver Eskendarov</name>
+            <email>envereskendarov@gmail.com</email>
+        </developer>
+    </developers>
 
-    <properties>
-        <maven.compiler.source>14</maven.compiler.source>
-        <maven.compiler.target>14</maven.compiler.target>
-    </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>14</source>
+                    <target>14</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <modules>
+        <module>server</module>
+        <module>client</module>
+    </modules>
 
 </project>
