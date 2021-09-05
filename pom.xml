@@ -13,7 +13,13 @@
     <developers>
         <developer>
             <name>Enver Eskendarov</name>
+            <id>eskendarov</id>
             <email>envereskendarov@gmail.com</email>
+            <url>https://eskendarov.ru/</url>
+            <timezone>+3</timezone>
+            <roles>
+                <role>Java Developer</role>
+            </roles>
         </developer>
     </developers>
 
@@ -22,7 +28,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <extensions>true</extensions>
                 <configuration>
+                    <encoding>UTF-8</encoding>
                     <source>14</source>
                     <target>14</target>
                 </configuration>
