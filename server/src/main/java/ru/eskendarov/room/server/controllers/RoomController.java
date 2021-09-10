@@ -1,11 +1,13 @@
 package ru.eskendarov.room.server.controllers;
 
 /**
- * RoomUsage Class - description goes here.
+ * Date: 07.09.2021
+ * Project: room
+ * Class: RoomController
  *
- * @author Enver Eskendarov
- * @version 1.0 07.09.2021
+ * @author Enver Eskendarov (envereskendarov@gmail.com)
+ * @version 1.0
  */
-public class RoomUsage {
+public class RoomController {
 
 }

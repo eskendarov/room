@@ -1,14 +1,19 @@
 package ru.eskendarov.room.server.domain.models;
+
+import lombok.Data;
+
 /**
- * <p>
- * Project: room
  * Date: 09.09.2021
- * Time: 23:41
- * <p>
- * Room - Class
+ * Project: room
+ * Class: Room
  *
- * @author Enver Eskendarov
+ * @author Enver Eskendarov (envereskendarov@gmail.com)
  * @version 1.0
  */
+@Data
 public class Room {
+
+    private int id;
+    private String name;
+    private User creatorId;
 }
