@@ -27,8 +27,12 @@ import static java.lang.Double.MAX_VALUE;
 import static javafx.geometry.Pos.CENTER;
 
 /**
- * @author Enver Eskendarov
- * @version 1.0 27.08.2021
+ * Date: 27.08.2021
+ * Project: room
+ * Class: Chat
+ *
+ * @author Enver Eskendarov (envereskendarov@gmail.com)
+ * @version 1.0
  */
 public class Chat {
 

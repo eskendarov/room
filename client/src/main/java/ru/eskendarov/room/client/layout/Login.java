@@ -15,8 +15,12 @@ import java.util.ResourceBundle;
 import static java.lang.Double.MAX_VALUE;
 
 /**
- * @author Enver Eskendarov
- * @version 1.0 06/04/2021
+ * Date: 27.08.2021
+ * Project: room
+ * Class: Login
+ *
+ * @author Enver Eskendarov (envereskendarov@gmail.com)
+ * @version 1.0
  */
 public class Login {
 

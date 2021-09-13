@@ -7,10 +7,12 @@ import javafx.stage.Stage;
 import ru.eskendarov.room.client.layout.Chat;
 
 /**
- * Room - main Class
+ * Date: 27.08.2021
+ * Project: room
+ * Class: Room
  *
- * @author Enver Eskendarov
- * @version 1.0 27.08.2021
+ * @author Enver Eskendarov (envereskendarov@gmail.com)
+ * @version 1.0
  */
 public class Room extends Application {
 
@@ -26,9 +28,5 @@ public class Room extends Application {
         primaryStage.setScene(new Scene(root));
         primaryStage.centerOnScreen();
         primaryStage.show();
-    }
-
-    public static void main(String[] args) {
-        launch();
     }
 }
