@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!--    Выводим логи в консоль -->
+    <appender name="CONSOLE_APPENDER"
+              class="ch.qos.logback.core.ConsoleAppender"
+              additivity="false">
+        <withJansi>true</withJansi>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%highlight(%+5level›) %boldMagenta(≣) ‹%boldYellow(%d{dd.MM.yy})~%boldYellow(%d{HH:mm:ss})› %boldRed(▶) %boldCyan(%-30logger{0}) %boldYellow(≣MSG›) %boldGreen(%msg%n)</pattern>
+        </encoder>
+    </appender>
+
+    <!--    Сохраняем логи в файл -->
+    <appender name="FILE_APPENDER"
+              class="ch.qos.logback.core.rolling.RollingFileAppender"
+              level="ALL"
+              additivity="false">
+        <file>logFile.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>logFile[%d{dd.MM.yy}]~%i.log</fileNamePattern>
+            <maxFileSize>2MB</maxFileSize>
+            <maxHistory>1</maxHistory>
+            <totalSizeCap>20MB</totalSizeCap>
+            <cleanHistoryOnStart>true</cleanHistoryOnStart>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%+5level› ≣ ‹%d{dd.MM.yyyy~HH:mm:ss}› ▶ %-100logger ≣MSG› %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--    Выводим логи SQL-операций в консоль  -->
+    <logger name="org.hibernate.SQL"
+            additivity="false"/>
+    <logger name="org.hibernate.type"
+            additivity="false"/>
+    <logger name="org.hibernate.type.descriptor.sql"
+            additivity="false"/>
+
+    <root level="DEBUG">
+        <appender-ref ref="CONSOLE_APPENDER"/>
+        <appender-ref ref="FILE_APPENDER"/>
+    </root>
+</configuration>

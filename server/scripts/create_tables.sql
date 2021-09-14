@@ -11,7 +11,7 @@ CREATE TABLE room (
     creator_id INT REFERENCES "user" (id)
 );
 
-CREATE TYPE CONTENT as ENUM ('TEXT', 'FILE');
+CREATE TYPE content_type as ENUM ('TEXT', 'FILE');
 
 CREATE TABLE message (
     id            SERIAL PRIMARY KEY,
@@ -19,8 +19,8 @@ CREATE TABLE message (
     room_id       INT REFERENCES room (id),
     send_time     TIMESTAMP,
     received_time TIMESTAMP,
-    text          VARCHAR,
-    type          CONTENT
+    text          TEXT,
+    type          CONTENT_TYPE
 );
 
 CREATE TABLE role (
@@ -28,9 +28,8 @@ CREATE TABLE role (
     name VARCHAR
 );
 
-CREATE TABLE user_room_role (
-    id      SERIAL PRIMARY KEY,
-    user_id INT REFERENCES "user" (id),
-    room_id INT REFERENCES room (id),
-    role_id INT REFERENCES role (id)
+CREATE TABLE room_user_role (
+    room_id  INT REFERENCES room (id),
+    users_id INT REFERENCES "user" (id),
+    role_id  INT REFERENCES role (id)
 );
