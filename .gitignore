@@ -2,5 +2,7 @@
 .idea
 *.iml
 
+*.log
+
 #Maven target files
 target

@@ -11,8 +11,12 @@ import ru.eskendarov.room.client.Room;
 import java.util.ResourceBundle;
 
 /**
- * @author Enver Eskendarov
- * @version 1.0 09/04/2021
+ * Date: 27.08.2021
+ * Project: room
+ * Class: CheckMail
+ *
+ * @author Enver Eskendarov (envereskendarov@gmail.com)
+ * @version 1.0
  */
 public class CheckMail {
 

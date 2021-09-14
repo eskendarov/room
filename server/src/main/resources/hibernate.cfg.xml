@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--    Конфигурация Hibernate  -->
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!--    Настройки подключения к БД  -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/room_db</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">password</property>
+
+        <!--    Ограничивает количество соединений, которые находятся в пуле соединений Hibernate.  -->
+        <property name="hibernate.connection.pool_size">1</property>
+
+        <!--    Чтобы метод getCurrentSession не вернул NULL, включаем автоматическое управление контекстом сессии.   -->
+        <!--    Полученный объект Session связан с контекстом hibernate и закрывается вместе с закрытием SessionFactory.    -->
+        <property name="hibernate.current_session_context_class">thread</property>
+
+        <!--    SQL Диалект     -->
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL10Dialect</property>
+
+        <!--    hibernate.hbm2ddl.auto=update - в случае различия фактического состояния таблицы, -->
+        <!--    Hibernate изменит структуру таблицы(создать, обновить таблицу и т.п.).            -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!--    Вывод в консоль SQL-запросов    -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.use_sql_comments">false</property>
+
+        <!--    Подключение объектов сущностей  -->
+        <mapping class="ru.eskendarov.room.server.domain.models.User"/>
+        <mapping class="ru.eskendarov.room.server.domain.models.Room"/>
+        <mapping class="ru.eskendarov.room.server.domain.models.Role"/>
+        <mapping class="ru.eskendarov.room.server.domain.models.Message"/>
+        <mapping class="ru.eskendarov.room.server.domain.models.RoomUserRole"/>
+    </session-factory>
+</hibernate-configuration>
